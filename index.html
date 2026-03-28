@@ -5,10 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
-      background: #0f172a;
+      background: linear-gradient(180deg, #0f172a, #020617);
       color: #e2e8f0;
     }
 
@@ -19,21 +23,36 @@
     }
 
     h1 {
-      font-size: 40px;
+      font-size: 42px;
       margin-bottom: 10px;
+      text-shadow: 0 0 20px rgba(56,189,248,0.5);
+      animation: fadeIn 1s ease-in-out;
     }
 
     h2 {
-      margin-top: 40px;
+      margin-top: 50px;
       border-bottom: 1px solid #1e293b;
       padding-bottom: 10px;
     }
 
+    .hero {
+      padding: 60px 0;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
     .card {
-      background: #111827;
+      background: rgba(17, 24, 39, 0.8);
+      backdrop-filter: blur(10px);
       padding: 20px;
-      border-radius: 12px;
+      border-radius: 16px;
       margin-top: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
 
     .tag {
@@ -43,15 +62,39 @@
       margin: 5px;
       border-radius: 20px;
       font-size: 12px;
+      transition: 0.3s;
+    }
+
+    .tag:hover {
+      background: #38bdf8;
+      color: #000;
     }
 
     a {
       color: #38bdf8;
       text-decoration: none;
+      transition: 0.3s;
     }
 
-    .hero {
-      padding: 40px 0;
+    a:hover {
+      color: #7dd3fc;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 8px;
+      margin-right: 10px;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: black;
+    }
+
+    .btn-outline {
+      border: 1px solid #38bdf8;
     }
 
     .highlight {
@@ -59,6 +102,22 @@
       font-weight: bold;
     }
 
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 
@@ -69,6 +128,7 @@
 <!-- HERO -->
 <div class="hero">
   <h1>Naveen Kumar</h1>
+
   <p><b>AI Product Manager building reliable LLM-powered products</b></p>
 
   <p>
@@ -78,9 +138,13 @@
   </p>
 
   <p>
-    <a href="case-study-llm.html">View Case Study →</a> |
-    <a href="NAVEEN_KUMAR_Resume.pdf" download>Download Resume</a> |
-    <a href="https://linkedin.com/in/naveen2888">LinkedIn</a>
+    I specialize in RAG systems, LLM evaluation, and AI product experimentation.
+  </p>
+
+  <p>
+    <a class="btn btn-primary" href="case-study-llm.html">View Case Study</a>
+    <a class="btn btn-outline" href="NAVEEN_KUMAR_Resume.pdf" download>Resume</a>
+    <a class="btn btn-outline" href="https://linkedin.com/in/naveen2888">LinkedIn</a>
   </p>
 </div>
 
@@ -89,8 +153,8 @@
 <div class="card">
   <p>
     AI Product Manager with 3+ years of experience building SaaS and LLM-powered products.
-    At Tracxn, I led RAG systems, evaluation frameworks, and automation engines improving
-    product reliability and scalability.
+    At Tracxn, I led development of AI systems including RAG pipelines, evaluation frameworks,
+    and automation engines that improved product reliability and scalability.
   </p>
 </div>
 
@@ -99,31 +163,42 @@
 
 <div class="card">
   <h3>LLM Evaluation & Hallucination Reduction</h3>
-  <p>Reduced hallucinations by 43% using evaluation systems and feedback loops.</p>
+  <p>
+    Built evaluation systems and feedback loops to improve AI reliability.
+  </p>
+  <p>
+    <b>Impact:</b> Reduced hallucinations by 43% and improved release speed by 25%.
+  </p>
   <a href="case-study-llm.html">Read full case study →</a>
 </div>
 
 <div class="card">
   <h3>RAG Pipeline Optimization</h3>
-  <p>Improved insight generation speed by 30% for 2,000+ users.</p>
+  <p>
+    Improved retrieval quality and prompt engineering to scale insights.
+  </p>
+  <p><b>Impact:</b> Increased speed by 30% for 2,000+ users.</p>
 </div>
 
 <div class="card">
   <h3>AI Automation Engines</h3>
-  <p>Eliminated manual workflows and scaled global data coverage.</p>
+  <p>
+    Built automation pipelines integrating multiple data sources.
+  </p>
+  <p><b>Impact:</b> Eliminated manual workflows and expanded coverage.</p>
 </div>
 
 <!-- AI THINKING -->
 <h2>AI Product Thinking</h2>
 <div class="card">
   <p><b>RAG vs Fine-Tuning</b><br>
-  Prefer RAG for dynamic data and faster iteration.</p>
+  Prefer RAG when data changes frequently and iteration speed matters.</p>
 
   <p><b>LLM Evaluation</b><br>
-  Treat evaluation as a core product feature.</p>
+  Treat evaluation as a core product feature, not backend validation.</p>
 
   <p><b>Hallucination Control</b><br>
-  Retrieval + feedback loops > model switching.</p>
+  Retrieval quality + feedback loops outperform model switching.</p>
 </div>
 
 <!-- SKILLS -->
