@@ -1,276 +1,639 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Naveen Kumar | AI Product Manager</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  <meta name="description" content="AI Product Manager with 3+ years building LLM-powered products — RAG pipelines, evaluation frameworks, and AI automation at scale."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
-    html {
-      scroll-behavior: smooth;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #fafaf8;
+      --black: #0d0d0d;
+      --gray: #6b7280;
+      --light: #f0efea;
+      --border: #e4e4e0;
+      --blue: #2563eb;
+      --tag-bg: #efefeb;
     }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: radial-gradient(circle at top, #0f172a, #020617);
-      color: #e2e8f0;
+      font-family: 'Manrope', sans-serif;
+      background: var(--bg);
+      color: var(--black);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-    }
+    a { color: inherit; text-decoration: none; }
 
-    /* NAVBAR */
-    .navbar {
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(10px);
-      background: rgba(15, 23, 42, 0.7);
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      z-index: 1000;
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,250,248,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 60px; height: 60px;
     }
-
-    .navbar a {
-      margin-left: 20px;
-      font-size: 14px;
-      color: #cbd5f5;
+    .nav-brand {
+      font-family: 'Syne', sans-serif;
+      font-size: 17px; font-weight: 800; letter-spacing: -0.5px;
     }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      font-size: 13px; font-weight: 500;
+      letter-spacing: 0.5px; color: var(--gray); transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--black); }
+    .nav-cta { display: flex; gap: 10px; }
+    .nav-cta a {
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.5px; padding: 8px 18px;
+      border-radius: 6px; transition: all 0.2s;
+    }
+    .cta-ln { background: var(--black); color: #fff !important; }
+    .cta-ln:hover { opacity: 0.85; }
+    .cta-resume { border: 1px solid var(--border); color: var(--black); }
+    .cta-resume:hover { background: var(--light); }
 
     /* HERO */
     .hero {
-      padding: 80px 0;
-      text-align: center;
-      animation: fadeInUp 1s ease;
+      border-bottom: 1px solid var(--border);
+      padding: 90px 60px 80px;
+      display: grid; grid-template-columns: 1.1fr 0.9fr;
+      gap: 80px; align-items: center;
     }
-
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--light); border: 1px solid var(--border);
+      padding: 6px 14px; border-radius: 100px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
+      color: var(--gray); margin-bottom: 22px;
+    }
+    .hero-badge span {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #22c55e; display: inline-block;
+    }
     .hero h1 {
-      font-size: 52px;
-      margin-bottom: 10px;
-      background: linear-gradient(90deg, #38bdf8, #818cf8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(44px, 5.5vw, 72px);
+      font-weight: 800; line-height: 1.0;
+      letter-spacing: -2.5px; margin-bottom: 24px;
     }
-
-    .hero p {
-      font-size: 18px;
-      color: #cbd5f5;
-      margin-top: 10px;
+    .hero h1 em { font-style: normal; color: var(--gray); }
+    .hero-sub {
+      font-size: 16px; line-height: 1.75;
+      color: var(--gray); max-width: 460px; margin-bottom: 36px;
     }
-
-    .hero-buttons {
-      margin-top: 25px;
-    }
-
-    /* BUTTONS */
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      border-radius: 10px;
-      margin: 8px;
-      font-size: 14px;
-      font-weight: 600;
-      transition: 0.3s;
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 13px 26px; border-radius: 8px;
+      font-size: 13px; font-weight: 600;
+      letter-spacing: 0.3px; transition: all 0.2s; cursor: pointer;
+    }
+    .btn-dark { background: var(--black); color: #fff; }
+    .btn-dark:hover { opacity: 0.85; transform: translateY(-1px); }
+    .btn-ghost { border: 1px solid var(--border); color: var(--black); }
+    .btn-ghost:hover { background: var(--light); transform: translateY(-1px); }
+
+    .stats-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: 12px;
+      overflow: hidden; margin-bottom: 20px;
+    }
+    .stat-box {
+      background: var(--bg); padding: 24px 22px; transition: background 0.2s;
+    }
+    .stat-box:hover { background: var(--light); }
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 36px; font-weight: 800;
+      letter-spacing: -1.5px; line-height: 1; margin-bottom: 5px;
+    }
+    .stat-label { font-size: 12px; color: var(--gray); font-weight: 500; line-height: 1.4; }
+    .exp-bar {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: 10px; padding: 16px 20px;
+      font-size: 13px; color: var(--gray); line-height: 1.7;
+    }
+    .exp-bar strong { color: var(--black); font-weight: 600; }
+
+    /* SECTIONS */
+    .section { padding: 72px 60px; border-bottom: 1px solid var(--border); }
+    .section-label {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--gray); margin-bottom: 40px;
+    }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 800; letter-spacing: -1.5px;
+      line-height: 1.05; margin-bottom: 16px;
+    }
+    .section-intro {
+      font-size: 15px; color: var(--gray);
+      max-width: 560px; line-height: 1.75; margin-bottom: 48px;
     }
 
-    .btn-primary {
-      background: linear-gradient(90deg, #38bdf8, #6366f1);
-      color: white;
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .about-text p { font-size: 15px; line-height: 1.85; color: var(--gray); margin-bottom: 16px; }
+    .about-text p strong { color: var(--black); }
+    .highlight-item {
+      border: 1px solid var(--border); border-radius: 10px;
+      padding: 20px 22px; margin-bottom: 12px; transition: box-shadow 0.2s;
+    }
+    .highlight-item:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .highlight-item h4 { font-size: 13px; font-weight: 700; margin-bottom: 5px; letter-spacing: -0.3px; }
+    .highlight-item p { font-size: 12px; color: var(--gray); line-height: 1.6; }
+
+    /* CASE STUDIES */
+    .case-featured {
+      display: grid; grid-template-columns: 1fr 1fr;
+      border: 1px solid var(--border); border-radius: 14px;
+      overflow: hidden; margin-bottom: 24px; transition: box-shadow 0.3s;
+    }
+    .case-featured:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.09); }
+    .case-visual {
+      background: var(--light);
+      display: flex; align-items: center; justify-content: center;
+      min-height: 280px; position: relative; overflow: hidden;
+    }
+    .case-visual-inner {
+      font-family: 'Syne', sans-serif;
+      font-size: 80px; font-weight: 800;
+      letter-spacing: -6px; color: rgba(0,0,0,0.07); user-select: none;
+    }
+    .case-visual::after {
+      content: ''; position: absolute;
+      bottom: 0; left: 0; right: 0; height: 3px;
+    }
+    .strip-blue::after { background: linear-gradient(90deg, #2563eb, #7c3aed); }
+    .strip-green::after { background: linear-gradient(90deg, #059669, #10b981); }
+    .strip-orange::after { background: linear-gradient(90deg, #ea580c, #f59e0b); }
+    .case-body {
+      padding: 36px; border-left: 1px solid var(--border);
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .case-tag {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--gray); margin-bottom: 14px;
+    }
+    .case-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 800; letter-spacing: -0.8px;
+      line-height: 1.15; margin-bottom: 14px;
+    }
+    .case-desc {
+      font-size: 13px; line-height: 1.75;
+      color: var(--gray); margin-bottom: 20px; flex-grow: 1;
+    }
+    .impact-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--light); border: 1px solid var(--border);
+      padding: 8px 14px; border-radius: 6px;
+      font-size: 12px; font-weight: 600; margin-bottom: 22px;
+    }
+    .read-more {
+      font-size: 13px; font-weight: 600; color: var(--black);
+      border-bottom: 1.5px solid var(--black); padding-bottom: 1px;
+      transition: all 0.2s; display: inline-flex; align-items: center; gap: 5px;
+    }
+    .read-more:hover { color: var(--blue); border-color: var(--blue); }
+    .cases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .case-card {
+      border: 1px solid var(--border); border-radius: 14px;
+      overflow: hidden; transition: box-shadow 0.3s;
+    }
+    .case-card:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.09); }
+    .case-card .case-visual { min-height: 160px; }
+    .case-card .case-visual-inner { font-size: 54px; letter-spacing: -4px; }
+    .case-card .case-body { border-left: none; border-top: 1px solid var(--border); padding: 24px; }
+
+    /* THINKING */
+    .thinking-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .thinking-card {
+      border: 1px solid var(--border); border-radius: 12px;
+      padding: 28px 26px; transition: all 0.25s;
+    }
+    .thinking-card:hover {
+      background: var(--black); color: #fff;
+      border-color: var(--black); transform: translateY(-4px);
+    }
+    .thinking-card:hover .tc-label,
+    .thinking-card:hover .tc-body,
+    .thinking-card:hover .tc-num { color: rgba(255,255,255,0.5); }
+    .tc-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 11px; font-weight: 800;
+      letter-spacing: 2px; color: var(--gray); margin-bottom: 16px;
+    }
+    .tc-label {
+      font-size: 11px; font-weight: 700; color: var(--gray);
+      letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px;
+    }
+    .tc-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px; font-weight: 800;
+      letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 12px;
+    }
+    .tc-body { font-size: 13px; color: var(--gray); line-height: 1.7; }
+
+    /* EXPERIENCE */
+    .exp-item {
+      display: grid; grid-template-columns: 160px 1fr;
+      gap: 40px; padding: 32px 0; border-bottom: 1px solid var(--border);
+    }
+    .exp-item:last-child { border-bottom: none; }
+    .exp-period { font-size: 12px; font-weight: 600; color: var(--gray); margin-bottom: 4px; }
+    .exp-company { font-size: 12px; color: var(--gray); }
+    .exp-role {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 10px;
+    }
+    .exp-desc { font-size: 13px; color: var(--gray); line-height: 1.75; margin-bottom: 14px; }
+    .exp-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .exp-pill {
+      background: var(--light); border: 1px solid var(--border);
+      padding: 4px 10px; border-radius: 4px;
+      font-size: 11px; font-weight: 600; color: var(--gray);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-3px);
+    /* SKILLS */
+    .skills-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: start; }
+    .skill-group { margin-bottom: 28px; }
+    .skill-group-name {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--gray);
+      margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border);
     }
-
-    .btn-outline {
-      border: 1px solid #38bdf8;
-      color: #38bdf8;
-    }
-
-    .btn-outline:hover {
-      background: #38bdf8;
-      color: black;
-    }
-
-    /* SECTION HEADINGS */
-    h2 {
-      margin-top: 60px;
-      font-size: 22px;
-      border-left: 4px solid #38bdf8;
-      padding-left: 10px;
-    }
-
-    /* CARDS */
-    .card {
-      background: rgba(17, 24, 39, 0.7);
-      backdrop-filter: blur(12px);
-      padding: 25px;
-      border-radius: 18px;
-      margin-top: 20px;
-      transition: 0.4s;
-      border: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    }
-
-    /* GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    /* TAGS */
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
     .tag {
       display: inline-block;
-      background: #1e293b;
-      padding: 6px 12px;
-      margin: 5px;
-      border-radius: 20px;
-      font-size: 12px;
-      transition: 0.3s;
+      background: var(--tag-bg); border: 1px solid var(--border);
+      padding: 7px 14px; border-radius: 6px;
+      font-size: 12px; font-weight: 600; transition: all 0.2s;
+    }
+    .tag:hover { background: var(--black); color: #fff; border-color: var(--black); }
+
+    /* CONTACT */
+    .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .contact-left p { font-size: 15px; color: var(--gray); line-height: 1.8; margin: 20px 0 32px; }
+    .contact-email-link {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(16px, 2vw, 22px); font-weight: 800; letter-spacing: -0.5px;
+      border-bottom: 2px solid var(--black); padding-bottom: 2px; transition: all 0.2s;
+    }
+    .contact-email-link:hover { color: var(--blue); border-color: var(--blue); }
+    .contact-card { border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .contact-card-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 22px; border-bottom: 1px solid var(--border);
+      font-size: 13px; font-weight: 600; transition: background 0.2s;
+    }
+    .contact-card-row:last-child { border-bottom: none; }
+    .contact-card-row:hover { background: var(--light); }
+    .contact-card-row a { font-size: 12px; font-weight: 600; color: var(--blue); }
+    .ccr-label { color: var(--gray); font-weight: 500; font-size: 12px; margin-bottom: 2px; }
+
+    /* FOOTER */
+    footer {
+      padding: 28px 60px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 12px; color: var(--gray);
+    }
+    .footer-brand {
+      font-family: 'Syne', sans-serif;
+      font-size: 14px; font-weight: 800; color: var(--black);
     }
 
-    .tag:hover {
-      background: #38bdf8;
-      color: black;
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 56px 24px 40px; gap: 40px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .section { padding: 56px 24px; }
+      .case-featured { grid-template-columns: 1fr; }
+      .case-body { border-left: none; border-top: 1px solid var(--border); }
+      .cases-grid { grid-template-columns: 1fr; }
+      .thinking-grid { grid-template-columns: 1fr; }
+      .skills-layout { grid-template-columns: 1fr; gap: 32px; }
+      .exp-item { grid-template-columns: 1fr; gap: 8px; }
+      .contact-wrap { grid-template-columns: 1fr; gap: 40px; }
+      footer { padding: 24px; flex-direction: column; gap: 8px; }
     }
 
-    a {
-      color: #38bdf8;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: #7dd3fc;
-    }
-
-    .highlight {
-      color: #38bdf8;
-      font-weight: bold;
-    }
-
-    /* ANIMATION */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
   </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-  <div><b>Naveen</b></div>
-  <div>
-    <a href="#about">About</a>
-    <a href="#cases">Case Studies</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Naveen Kumar</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#cases">Case Studies</a></li>
+    <li><a href="#thinking">Thinking</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a class="cta-resume" href="NAVEEN_KUMAR_Resume.pdf" download>Resume ↓</a>
+    <a class="cta-ln" href="https://linkedin.com/in/naveen2888" target="_blank">LinkedIn →</a>
   </div>
-</div>
-
-<div class="container">
+</nav>
 
 <!-- HERO -->
-<div class="hero">
-  <h1>Naveen Kumar</h1>
-
-  <p><b>AI Product Manager building reliable LLM-powered products</b></p>
-
-  <p>
-    Built AI systems used by <span class="highlight">2,000+ users</span> • 
-    Reduced hallucinations by <span class="highlight">43%</span> • 
-    Improved insights by <span class="highlight">30%</span>
-  </p>
-
-  <div class="hero-buttons">
-    <a class="btn btn-primary" href="case-study-llm.html">View Case Study</a>
-    <a class="btn btn-outline" href="NAVEEN_KUMAR_Resume.pdf" download>Resume</a>
-    <a class="btn btn-outline" href="https://linkedin.com/in/naveen2888">LinkedIn</a>
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge"><span></span> Open to AI PM roles</div>
+    <h1>Building<br/><em>reliable</em><br/>AI products.</h1>
+    <p class="hero-sub">
+      AI Product Manager with 3+ years shipping LLM-powered products —
+      RAG pipelines, evaluation frameworks, and AI automation at scale.
+      Previously at <strong>Tracxn</strong>.
+    </p>
+    <div class="hero-btns">
+      <a class="btn btn-dark" href="#cases">View Case Studies</a>
+      <a class="btn btn-ghost" href="NAVEEN_KUMAR_Resume.pdf" download>Download Resume</a>
+    </div>
   </div>
-</div>
+  <div class="hero-right">
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-num">43%</div>
+        <div class="stat-label">Hallucination<br/>reduction</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">2K+</div>
+        <div class="stat-label">Users on<br/>AI systems</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">30%</div>
+        <div class="stat-label">Speed<br/>improvement</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Years in<br/>AI products</div>
+      </div>
+    </div>
+    <div class="exp-bar">
+      <strong>Tracxn</strong> · AI Product Manager<br/>
+      RAG · LLM Evaluation · Automation · Product Strategy
+    </div>
+  </div>
+</section>
 
 <!-- ABOUT -->
-<h2 id="about">About</h2>
-<div class="card">
-  <p>
-    AI Product Manager with 3+ years of experience building SaaS and LLM-powered products.
-    At Tracxn, I led development of AI systems including RAG pipelines, evaluation frameworks,
-    and automation engines improving reliability and scalability.
-  </p>
-</div>
+<section class="section fade-in" id="about">
+  <div class="section-label">Background</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm an <strong>AI Product Manager</strong> who bridges the gap between cutting-edge LLM capabilities and real-world product value. My work focuses on making AI systems reliable, measurable, and scalable — not just impressive in demos.</p>
+      <p>At <strong>Tracxn</strong>, I owned AI product development end-to-end: from defining retrieval strategies and evaluation rubrics to running A/B tests on model outputs and shipping automation pipelines that eliminated manual workflows.</p>
+      <p>I think of evaluation as a product feature, not an afterthought — because if you can't measure AI quality, you can't improve it systematically.</p>
+    </div>
+    <div>
+      <div class="highlight-item">
+        <h4>🧠 LLM Product Expertise</h4>
+        <p>RAG architecture, prompt engineering, hallucination control, model evaluation — shipped in production, not just prototyped.</p>
+      </div>
+      <div class="highlight-item">
+        <h4>📊 Data-Driven PM</h4>
+        <p>SQL-fluent, comfortable with A/B testing design, cohort analysis, and translating data signals into product decisions.</p>
+      </div>
+      <div class="highlight-item">
+        <h4>🚀 Execution-Focused</h4>
+        <p>Led cross-functional teams to ship AI features with measurable impact — from discovery through launch and iteration.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- CASE STUDIES -->
-<h2 id="cases">Case Studies</h2>
+<section class="section fade-in" id="cases">
+  <div class="section-label">Work</div>
+  <div class="section-title">Case Studies</div>
+  <p class="section-intro">Deep dives into the AI product problems I've solved — what I built, how I thought about it, and what moved the needle.</p>
 
-<div class="grid">
-
-  <div class="card">
-    <h3>LLM Evaluation & Hallucination Reduction</h3>
-    <p>Built evaluation systems and feedback loops to improve AI reliability.</p>
-    <p><b>Impact:</b> Reduced hallucinations by 43%</p>
-    <a href="case-study-llm.html">Read case study →</a>
+  <div class="case-featured">
+    <div class="case-visual strip-blue">
+      <div class="case-visual-inner">LLM</div>
+    </div>
+    <div class="case-body">
+      <div>
+        <div class="case-tag">AI Reliability · Evaluation Systems</div>
+        <h3 class="case-title">LLM Evaluation &amp; Hallucination Reduction</h3>
+        <p class="case-desc">Designed and shipped a systematic evaluation framework to measure and reduce hallucinations in a production LLM system. Built automated scoring pipelines, human-in-the-loop feedback loops, and regression test suites that gave the team confidence to ship faster without sacrificing quality.</p>
+        <div class="impact-chip">Hallucinations ↓ 43% · Release speed ↑ 25%</div>
+      </div>
+      <a class="read-more" href="case-study-llm.html">Read full case study →</a>
+    </div>
   </div>
 
-  <div class="card">
-    <h3>RAG Pipeline Optimization</h3>
-    <p>Improved retrieval quality and prompt engineering.</p>
-    <p><b>Impact:</b> Increased speed by 30%</p>
+  <div class="cases-grid">
+    <div class="case-card">
+      <div class="case-visual strip-green">
+        <div class="case-visual-inner">RAG</div>
+      </div>
+      <div class="case-body">
+        <div class="case-tag">Retrieval · Prompt Engineering</div>
+        <h3 class="case-title">RAG Pipeline Optimization</h3>
+        <p class="case-desc">Redesigned the retrieval strategy and prompt templates for a live product serving 2,000+ users — improving answer relevance, reducing latency, and enabling faster iteration on context quality.</p>
+        <div class="impact-chip">Speed ↑ 30% for 2,000+ users</div>
+        <a class="read-more" href="#">Coming soon →</a>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-visual strip-orange">
+        <div class="case-visual-inner">AUTO</div>
+      </div>
+      <div class="case-body">
+        <div class="case-tag">Automation · Data Pipelines</div>
+        <h3 class="case-title">AI Automation Engine</h3>
+        <p class="case-desc">Built multi-source data ingestion and automation pipelines that replaced entirely manual analyst workflows — expanding coverage and improving freshness of intelligence data across the platform.</p>
+        <div class="impact-chip">Manual workflows eliminated · Coverage expanded</div>
+        <a class="read-more" href="#">Coming soon →</a>
+      </div>
+    </div>
   </div>
-
-  <div class="card">
-    <h3>AI Automation Engines</h3>
-    <p>Built automation pipelines across multiple data sources.</p>
-    <p><b>Impact:</b> Eliminated manual workflows</p>
-  </div>
-
-</div>
+</section>
 
 <!-- THINKING -->
-<h2>AI Product Thinking</h2>
-<div class="card">
-  <p><b>RAG vs Fine-Tuning:</b> Prefer RAG when iteration speed matters.</p>
-  <p><b>LLM Evaluation:</b> Treat evaluation as a product feature.</p>
-  <p><b>Hallucination Control:</b> Retrieval + feedback loops > model switching.</p>
-</div>
+<section class="section fade-in" id="thinking">
+  <div class="section-label">Perspective</div>
+  <div class="section-title">AI Product Thinking</div>
+  <p class="section-intro">How I approach the decisions that matter most when building LLM products.</p>
+  <div class="thinking-grid">
+    <div class="thinking-card">
+      <div class="tc-num">01</div>
+      <div class="tc-label">Architecture</div>
+      <div class="tc-title">RAG before Fine-Tuning</div>
+      <p class="tc-body">When your data changes fast and iteration speed matters, RAG wins. Fine-tuning is powerful but expensive to maintain. Start with retrieval, layer in fine-tuning only when you've hit its ceiling.</p>
+    </div>
+    <div class="thinking-card">
+      <div class="tc-num">02</div>
+      <div class="tc-label">Quality</div>
+      <div class="tc-title">Evaluation is a Product Feature</div>
+      <p class="tc-body">LLM evaluation isn't a backend concern — it's a product capability. If your team can't measure output quality consistently, you're flying blind. Build evals early, not after launch.</p>
+    </div>
+    <div class="thinking-card">
+      <div class="tc-num">03</div>
+      <div class="tc-label">Reliability</div>
+      <div class="tc-title">Fix Context, Not the Model</div>
+      <p class="tc-body">Retrieval quality and structured feedback loops reduce hallucinations more reliably than swapping models. Most AI quality problems are data and context problems, not model problems.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section fade-in" id="experience">
+  <div class="section-label">Timeline</div>
+  <div class="section-title">Experience</div>
+  <div>
+    <div class="exp-item">
+      <div>
+        <div class="exp-period">2021 – Present</div>
+        <div class="exp-company">Tracxn</div>
+      </div>
+      <div>
+        <div class="exp-role">AI Product Manager</div>
+        <p class="exp-desc">Led AI product development across RAG pipelines, LLM evaluation frameworks, and automation engines. Owned the full product lifecycle — from defining requirements and success metrics to coordinating engineering delivery and post-launch iteration. Shipped systems used by 2,000+ users with measurable reliability and performance improvements.</p>
+        <div class="exp-pills">
+          <span class="exp-pill">RAG Systems</span>
+          <span class="exp-pill">LLM Evaluation</span>
+          <span class="exp-pill">Prompt Engineering</span>
+          <span class="exp-pill">A/B Testing</span>
+          <span class="exp-pill">SQL</span>
+          <span class="exp-pill">Roadmapping</span>
+        </div>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div>
+        <div class="exp-period">Prior</div>
+        <div class="exp-company">SaaS</div>
+      </div>
+      <div>
+        <div class="exp-role">Product & SaaS Roles</div>
+        <p class="exp-desc">3+ years of cross-functional product experience in SaaS environments — working on product strategy, user research, and feature development before specialising in AI-powered products.</p>
+        <div class="exp-pills">
+          <span class="exp-pill">Product Strategy</span>
+          <span class="exp-pill">User Research</span>
+          <span class="exp-pill">Agile</span>
+          <span class="exp-pill">Stakeholder Management</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- SKILLS -->
-<h2 id="skills">Skills</h2>
-<div class="card">
-  <span class="tag">LLMs</span>
-  <span class="tag">RAG</span>
-  <span class="tag">Prompt Engineering</span>
-  <span class="tag">A/B Testing</span>
-  <span class="tag">SQL</span>
-  <span class="tag">Product Strategy</span>
-</div>
+<section class="section fade-in" id="skills">
+  <div class="section-label">Toolkit</div>
+  <div class="skills-layout">
+    <div>
+      <div class="section-title" style="font-size:clamp(24px,3vw,36px);">What I<br/>work with.</div>
+      <p style="font-size:14px;color:var(--gray);line-height:1.8;margin-top:16px;">A mix of AI-specific product skills, analytical tools, and PM fundamentals that let me operate across the full product development cycle.</p>
+    </div>
+    <div>
+      <div class="skill-group">
+        <div class="skill-group-name">AI / LLM</div>
+        <div class="skill-tags">
+          <span class="tag">LLMs (GPT, Claude, Gemini)</span>
+          <span class="tag">RAG Systems</span>
+          <span class="tag">Prompt Engineering</span>
+          <span class="tag">LLM Evaluation</span>
+          <span class="tag">Vector Databases</span>
+          <span class="tag">Fine-Tuning Concepts</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-name">Product Management</div>
+        <div class="skill-tags">
+          <span class="tag">Product Strategy</span>
+          <span class="tag">Roadmapping</span>
+          <span class="tag">A/B Testing</span>
+          <span class="tag">User Research</span>
+          <span class="tag">PRD Writing</span>
+          <span class="tag">Stakeholder Mgmt</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-name">Data & Tools</div>
+        <div class="skill-tags">
+          <span class="tag">SQL</span>
+          <span class="tag">Data Analysis</span>
+          <span class="tag">Jira / Linear</span>
+          <span class="tag">Figma (Wireframing)</span>
+          <span class="tag">Agile / Scrum</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- CONTACT -->
-<h2 id="contact">Contact</h2>
-<div class="card">
-  <p>Email: naveen008484@gmail.com</p>
-  <p><a href="https://linkedin.com/in/naveen2888">LinkedIn</a></p>
-</div>
+<section class="section fade-in" id="contact">
+  <div class="section-label">Get in Touch</div>
+  <div class="contact-wrap">
+    <div class="contact-left">
+      <div class="section-title">Let's talk<br/>AI products.</div>
+      <p>I'm actively exploring AI PM roles. If you're building something meaningful with LLMs and need someone who can own it end-to-end — let's connect.</p>
+      <a class="contact-email-link" href="mailto:naveen008484@gmail.com">naveen008484@gmail.com</a>
+    </div>
+    <div class="contact-right">
+      <div class="contact-card">
+        <div class="contact-card-row">
+          <div><div class="ccr-label">Email</div>naveen008484@gmail.com</div>
+          <a href="mailto:naveen008484@gmail.com">Send →</a>
+        </div>
+        <div class="contact-card-row">
+          <div><div class="ccr-label">LinkedIn</div>linkedin.com/in/naveen2888</div>
+          <a href="https://linkedin.com/in/naveen2888" target="_blank">Connect →</a>
+        </div>
+        <div class="contact-card-row">
+          <div><div class="ccr-label">Resume</div>NAVEEN_KUMAR_Resume.pdf</div>
+          <a href="NAVEEN_KUMAR_Resume.pdf" download>Download →</a>
+        </div>
+        <div class="contact-card-row">
+          <div><div class="ccr-label">Location</div>Bengaluru, India · Open to Remote</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-</div>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Naveen Kumar</div>
+  <div>AI Product Manager · Bengaluru, India · 2026</div>
+  <div><a href="https://linkedin.com/in/naveen2888" target="_blank" style="color:inherit;">LinkedIn</a></div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
